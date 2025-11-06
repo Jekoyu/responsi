@@ -28,3 +28,14 @@ model Product {
   userId      Int
   user        User     @relation(fields: [userId], references: [id])
 }
+
+model Book {
+    id          String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+    name            String
+    description     String?
+    author          String
+    publisher       String
+    publishedYear   Int
+    createdAt       DateTime @default(now())
+    updatedAt      DateTime @updatedAt
+}

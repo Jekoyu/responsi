@@ -22,7 +22,6 @@ class AuthService {
       throw new Error('User with this email or username already exists');
     }
 
-    // Hash password
     const hashedPassword = await bcrypt.hash(password, 10);
 
     // Create user

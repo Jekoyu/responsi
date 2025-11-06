@@ -5,6 +5,7 @@ const cors = require('cors');
 // Import routes
 const authRoutes = require('./routes/auth');
 const productRoutes = require('./routes/products');
+const booksRoutes = require('./routes/books')
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -17,6 +18,7 @@ app.use(express.urlencoded({ extended: true }));
 // Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/products', productRoutes);
+app.use('/api/books',booksRoutes)
 
 // Health check endpoint
 app.get('/api/health', (req, res) => {
